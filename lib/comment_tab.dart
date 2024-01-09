@@ -13,9 +13,8 @@ class CommentListTab extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else {
+          }
+           else {
             List<Comment> comments = snapshot.data!;
             return ListView.builder(
               itemCount: comments.length,
@@ -56,9 +55,9 @@ class CommentProvider with ChangeNotifier {
 
 class Comment {
   final int postId;
-  final int id;
+  final String id;
   final String name;
-  final String email;
+  final int email;
   final String body;
 
   Comment({

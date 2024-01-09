@@ -48,7 +48,7 @@ class PostProvider with ChangeNotifier {
 }
 
 class Post {
-  final int userId;
+  final String userId;
   final int id;
   final String title;
   final String body;
